@@ -25,12 +25,6 @@ function App() {
   
   async function getStarshipData() {
     try {
-      // console.log('sessionData', (await Auth.currentUserInfo()));
-      // console.log('token', `${(await Auth.currentSession()).getIdToken().getJwtToken()}`);
-      // const headers = {
-      //   Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`
-      // };
-      // const options = {headers};
       const starshipData = await API.get(serverAPI, `/starshiptest/${idInput}`);
       console.log("starship", starshipData);
       setStarshipData(starshipData.starship);
@@ -47,7 +41,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello world</h1>
+        <h1>Hello world!</h1>
         <input placeholder="User Id" type="text" value={idInput} onChange={(e) => {setIdInput(e.target.value)}} />
         <button onClick={() => {setStarshipData(null); getPeopleData(idInput)}}>Get user data</button>
         <button onClick={() => {getStarshipData(idInput)}}>Get user starship data</button>

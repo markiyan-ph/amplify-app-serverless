@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "paths": {
+    "/people": {
+      "name": "/people",
+      "lambdaFunction": "amplifyserverlesstest",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/starshiptest": {
+      "name": "/starshiptest",
+      "lambdaFunction": "amplifyserverlesstest",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
